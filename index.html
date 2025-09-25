@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cooperativas VYATF</title>
+  <meta name="description" content="Cooperativa en Bosa que apoya a vendedores ambulantes con servicios financieros, educativos y sociales." />
+
+  <style>
+    :root{
+      --blue-light:#A7C7E7;
+      --blue-dark:#1E3A5F;
+      --white:#ffffff;
+      --gray:#f4f4f4;
+      --radius:14px;
+      --maxw:1200px;
+      font-family:'Montserrat', sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--gray);color:var(--blue-dark);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:var(--maxw);margin:0 auto;padding:20px}
+
+    header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);box-shadow:0 2px 6px rgba(0,0,0,0.05)}
+    .nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo img{height:40px}
+
+    nav ul{display:flex;gap:18px;list-style:none}
+    nav ul li{text-align:center}
+    .menu-toggle{display:none;font-size:28px;cursor:pointer;background:none;border:none;color:var(--blue-dark)}
+
+    .search-box{position:relative}
+    .search-box input{padding:8px 30px 8px 12px;border:1px solid #ccc;border-radius:20px;outline:none;width:180px}
+    .search-box i{position:absolute;right:10px;top:50%;transform:translateY(-50%);color:#555}
+
+    .btn{background:var(--blue-dark);color:var(--white);padding:8px 16px;border-radius:20px;font-weight:600;transition:0.3s;display:inline-block}
+    .btn:hover{opacity:0.85}
+
+    .hero{background:linear-gradient(135deg,var(--blue-light),#dce9f8);padding:80px 20px;text-align:center}
+    .hero h1{font-size:2.5rem;margin-bottom:10px}
+    .hero p{margin-bottom:20px;font-size:1.1rem}
+    .hero .btn{padding:12px 24px;font-size:1.1rem}
+
+    section{padding:60px 20px}
+    h2{text-align:center;margin-bottom:30px;font-size:1.8rem;color:var(--blue-dark)}
+
+    .grid{display:grid;gap:20px}
+    .grid-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .grid-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+
+    .card{background:var(--white);padding:20px;border-radius:var(--radius);box-shadow:0 4px 10px rgba(0,0,0,0.05);transition:transform 0.3s,box-shadow 0.3s}
+    .card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.1)}
+
+    .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+    .member{background:var(--white);padding:20px;text-align:center;border-radius:var(--radius);box-shadow:0 4px 10px rgba(0,0,0,0.05)}
+    .member h3{margin:10px 0 5px}
+
+    form input,form textarea{width:100%;padding:10px;margin-bottom:12px;border:1px solid #ccc;border-radius:8px}
+    form button{background:var(--blue-dark);color:var(--white);padding:10px 16px;border:none;border-radius:8px;font-weight:600}
+
+    footer{background:var(--blue-dark);color:var(--white);text-align:center;padding:20px;margin-top:40px}
+
+    /* Animaciones */
+    .fade-in{opacity:0;transform:translateY(20px);transition:all 1s ease}
+    .fade-in.visible{opacity:1;transform:translateY(0)}
+
+    /* Responsive */
+    @media (max-width:900px){
+      nav ul{display:none;flex-direction:column;gap:12px;width:100%;background:var(--blue-light);padding:15px;border-radius:10px;margin-top:10px}
+      nav ul.active{display:flex}
+      .menu-toggle{display:block}
+      .search-box{width:100%;margin-top:10px}
+      .search-box input{width:100%}
+      .hero h1{font-size:2rem}
+      .hero p{font-size:1rem}
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="nav container">
+      <div class="logo">
+        <img src="https://i.ibb.co/1JrfKmTp/logo.png" alt="Logo VYATF">
+        <strong>Cooperativas VYATF</strong>
+      </div>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <nav>
+        <ul id="menu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#objetivos">Objetivos</a></li>
+          <li><a href="#equipo">Equipo</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="search-box">
+        <input type="text" placeholder="Buscar...">
+        <i>🔍</i>
+      </div>
+      <a class="btn" href="#contacto">Hazte socio</a>
+    </div>
+  </header>
+
+  <section id="inicio" class="hero">
+    <h1>Apoyamos tus sueños, fortalecemos tu negocio</h1>
+    <p>Somos una cooperativa en Bosa dedicada a brindar ayuda financiera, educativa y social a vendedores ambulantes y trabajadores de bajos recursos.</p>
+    <a href="#nosotros" class="btn">Conócenos</a>
+  </section>
+
+  <section id="nosotros" class="fade-in">
+    <h2>Nosotros</h2>
+    <div class="container grid grid-2">
+      <div>
+        <p><strong>Misión:</strong> Apoyar a los vendedores ambulantes y microemprendedores de bajos recursos mediante servicios financieros, sociales y educativos, mejorando su calidad de vida.</p>
+        <p><strong>Visión:</strong> Ser reconocidos en Bogotá y pueblos cercanos como la cooperativa líder en impulsar el desarrollo y la estabilidad económica de emprendedores.</p>
+      </div>
+      <div>
+        <p><strong>Dirección:</strong> Centro Comercial Gran Plaza Bosa (Cl. 65 Sur #78H -51, Bosa, Bogotá)</p>
+        <p><strong>Correo:</strong> vyatf.4@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" class="fade-in">
+    <h2>Servicios</h2>
+    <div class="container grid grid-3">
+      <div class="card"><h3>Educación financiera</h3><p>Aprende a administrar tu dinero, ahorrar e invertir para fortalecer tu emprendimiento.</p></div>
+      <div class="card"><h3>Microcréditos</h3><p>Accede a créditos diseñados para emprendedores de bajos recursos.</p></div>
+      <div class="card"><h3>Apoyo económico y social</h3><p>Te acompañamos en los retos del día a día de tu negocio.</p></div>
+      <div class="card"><h3>Plataforma de gestión</h3><p>Accede a servicios y herramientas en línea para tu negocio.</p></div>
+    </div>
+  </section>
+
+  <section id="productos" class="fade-in">
+    <h2>Productos Financieros</h2>
+    <div class="container grid grid-2">
+      <div class="card"><h3>Tarjeta de crédito clásica</h3><p>Línea de crédito ajustada al usuario. Tasas de interés altas por mayor riesgo.</p></div>
+      <div class="card"><h3>Tarjeta de crédito por costo</h3><p>Opciones con tasas bajas para aprovechar al máximo los beneficios.</p></div>
+      <div class="card"><h3>Tarjeta débito Imagin</h3><p>Transferencias internacionales al tipo de cambio real y hasta 2 subcuentas de ahorro.</p></div>
+      <div class="card"><h3>Cuenta de ahorros</h3><p>Opciones desde $300.000 hasta $5.000.000 según tus necesidades.</p></div>
+    </div>
+  </section>
+
+  <section id="objetivos" class="fade-in">
+    <h2>Objetivos</h2>
+    <div class="container">
+      <ul>
+        <li>Identificar las razones por las que los trabajadores no pueden fortalecer su emprendimiento.</li>
+        <li>Priorizar recursos y oportunidades para recuperar y rehabilitar productos mal aprovechados.</li>
+        <li>Satisfacer necesidades individuales y colectivas mediante actividades económicas.</li>
+        <li>Implementar infraestructura, capital y servicios públicos en apoyo a los emprendedores.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="equipo" class="fade-in">
+    <h2>Equipo</h2>
+    <div class="container team">
+      <div class="member"><h3>Stephany Hurtado</h3><p>Jefa</p></div>
+      <div class="member"><h3>Cesar Abreu</h3><p>Gerente</p></div>
+      <div class="member"><h3>Sebastian Malagon</h3><p>Asesor financiero</p></div>
+      <div class="member"><h3>Paula Jimenez</h3><p>Marketing</p></div>
+    </div>
+  </section>
+
+  <section id="contacto" class="fade-in">
+    <h2>Contacto</h2>
+    <div class="container grid grid-2">
+      <form onsubmit="event.preventDefault();alert('Formulario de ejemplo enviado');">
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Correo" required>
+        <textarea rows="5" placeholder="Mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <div>
+        <p><strong>Dirección:</strong> Centro Comercial Gran Plaza Bosa (Cl. 65 Sur #78H -51, Bosa, Bogotá)</p>
+        <p><strong>Correo:</strong> vyatf.4@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Cooperativas VYATF — Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    // Animaciones al hacer scroll
+    const faders=document.querySelectorAll('.fade-in');
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    },{threshold:0.2});
+    faders.forEach(f=>observer.observe(f));
+
+    // Menú responsive
+    const menuToggle=document.getElementById('menuToggle');
+    const menu=document.getElementById('menu');
+    menuToggle.addEventListener('click',()=>{menu.classList.toggle('active');});
+  </script>
+</body>
+</html>
+
